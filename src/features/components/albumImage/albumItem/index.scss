@@ -1,0 +1,11 @@
+.album_item {
+    margin-left:1rem;
+
+    img {
+        width: 200px;
+        height:300px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #f1f1f1
+    }
+}

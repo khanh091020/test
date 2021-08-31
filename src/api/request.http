@@ -1,0 +1,12 @@
+POST https://api.ezfrontend.com/auth/local/register
+content-type: application/json
+
+{
+     "email": "khanhjjsss70@gmail.com",
+          "username": "ksshsanhjj70kkk",
+          "password": "",
+          "fullName": "khanh pro"
+}
+
+### 
+get https://api.ezfrontend.com/products?_limit=5&_start=10

@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import { increment, decrement } from './counterSlice';
 import { Button, makeStyles } from '@material-ui/core';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment } from './counterSlice';
 const useStyle = makeStyles({
   root: {
     background: 'linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%)',

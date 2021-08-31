@@ -1,11 +1,12 @@
-import './App.css';
-import ListAlbum from './features/components/albumImage/listAlbum';
-import { Route, Link, NavLink, Switch } from 'react-router-dom';
-import Todos from './features/components/Todos/page';
-import NotFound from './components/notFound';
-import { useEffect } from 'react';
-import categoriesApi from './api/categoriesApi';
-import Counter from './features/components/counter';
+import { SnackbarProvider } from "notistack";
+import { Route, Switch } from "react-router-dom";
+import "./App.css";
+import PrimarySearchAppBar from "./components/header";
+import NotFound from "./components/notFound";
+import ListAlbum from "./features/components/albumImage/listAlbum";
+import Counter from "./features/components/counter";
+import Todos from "./features/components/Todos/page";
+import ProductFeature from "./features/products";
 
 function App() {
   // useEffect(() => {
@@ -13,30 +14,18 @@ function App() {
   //   console.log(fetchedProduct);
   // }, []);
   return (
-    <div className="App">
-      <p>
-        <Link to="/todos">Todos</Link>
-      </p>
-      <p>
-        <Link to="/albums">Albums</Link>
-      </p>
-      <p>
-        <NavLink activeClassName="nav_active" to="/todos">
-          Todos
-        </NavLink>
-      </p>
-      <p>
-        <NavLink activeClassName="nav_active" to="/albums">
-          Albums
-        </NavLink>
-      </p>
-      <Counter />
-      <Switch>
-        <Route path="/todos" component={Todos} />
-        <Route path="/albums" component={ListAlbum} />
-        <Route component={NotFound} />
-      </Switch>
-    </div>
+    <SnackbarProvider maxSnack={10} autoHideDuration={1500} anchorOrigin={{ horizontal: "right", vertical: "top" }}>
+      <div className="App">
+        <PrimarySearchAppBar />
+        <Switch>
+          <Route path="/todos" component={Todos} />
+          <Route path="/albums" component={ListAlbum} />
+          <Route path="/products" component={ProductFeature} />
+          <Route path="/" component={Counter} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </SnackbarProvider>
   );
 }
 

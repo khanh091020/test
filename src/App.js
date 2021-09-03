@@ -21,7 +21,7 @@ function App() {
           <Route path="/todos" component={Todos} />
           <Route path="/albums" component={ListAlbum} />
           <Route path="/products" component={ProductFeature} />
-          <Route path="/" component={Counter} />
+          <Route path="/" component={ProductFeature} />
           <Route component={NotFound} />
         </Switch>
       </div>

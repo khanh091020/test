@@ -1,7 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { TextField } from '@material-ui/core';
-import { useForm } from 'react-hook-form';
+import { TextField } from "@material-ui/core";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 const InputField = (props) => {
   const { register, handleSubmit } = useForm();

@@ -12,4 +12,4 @@ content-type: application/json
 get https://api.ezfrontend.com/products?_limit=5&_start=10
 
 ### 
-delete https://api.ezfrontend.com/products/31397093
+get https://api.ezfrontend.com/products/31397093

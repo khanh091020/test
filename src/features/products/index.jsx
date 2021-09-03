@@ -1,14 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
-import ListPage from "./pages/listPage";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
+import ListPage from "./pages/listPage";
+import ProductDetails from "./pages/productDetails";
 
 const ProductFeature = (props) => {
-  const match = useRouteMatch();
+  const { path } = useRouteMatch();
   return (
     <div>
       <Switch>
-        <Route path="/" component={ListPage} />
+        <Route path={`${path}/:id`} component={ProductDetails} exact />
+        <Route path={`${path}/`} component={ListPage} />
       </Switch>
     </div>
   );

@@ -1,18 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import productApi from "../../../api/productApi";
+import categoryApi from "../../../api/categoriesApi";
 
-export const getProduct = createAsyncThunk(async (params) => {
-  const data = await productApi.getAll(params);
-  console.log(data);
+export const getAllCategories = createAsyncThunk("categories/getAllCategries", async () => {
+  const data = await categoryApi.getAll();
   return data;
 });
 
 const productSlice = createSlice({
   name: "product",
-  initialState: [],
+  initialState: {
+    product: [],
+    categories: []
+  },
   reducers: {},
   extraReducers: {
-    [getProduct.fulfilled]: (state, actions) => actions.payload.data
+    [getAllCategories.fulfilled]: (state, action) => {
+      state.categories = action.payload;
+    }
   }
 });
 

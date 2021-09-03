@@ -1,12 +1,11 @@
-import { Avatar, Button, LinearProgress, makeStyles, Typography } from "@material-ui/core";
+import { Avatar, makeStyles, Typography } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import React from "react";
-
-import { useDispatch } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
+import { useSnackbar } from "notistack";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { login } from "../../Auth/userSlice";
 import LoginForm from "../loginForm/index";
-import { useSnackbar } from "notistack";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {

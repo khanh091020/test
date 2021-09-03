@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
 Loading.propTypes = {};
 
 function Loading(props) {
-    return <div></div>;
+  return <div></div>;
 }
 
 export default Loading;
